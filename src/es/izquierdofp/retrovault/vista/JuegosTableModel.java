@@ -12,7 +12,7 @@ import es.izquierdofp.retrovault.modelo.Juego;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-public class JuegosTableModel {
+public class JuegosTableModel extends AbstractTableModel {
 
     // Nombres de columnas que mostrará la cabecera de la tabla
     private static final String[] COLS
@@ -74,13 +74,12 @@ public class JuegosTableModel {
                 j.getGenero();
             case 4 ->
                 j.getAnio();
-// Si las no se renderizan en tu JDK/fuente, aparece al menos (n/5) ★
+// Si las ★ no se renderizan en tu JDK/fuente, aparece al menos (n/5)
             case 5 ->
                 j.getPuntuacion() == 0
                 ? "—"
-                : " ".repeat(j.getPuntuacion()) + " (" + j.getPuntuacion() + "/5)";
-            ★
-case 6 ->
+                : "★".repeat(j.getPuntuacion()) + " (" + j.getPuntuacion() + "/5)";
+            case 6 ->
                 j.getEstado();
             default ->
                 "";
